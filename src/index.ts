@@ -1,7 +1,8 @@
 import "./lib/db";
 import express from "express";
 import countryRoutes from "./routes/country";
-import expensesRoutes from './routes/expense';
+import expensesRoutes from "./routes/expense";
+import incomingRoutes from "./routes/incoming";
 
 const app = express();
 const port = process.env.PORT || 3333;
@@ -26,6 +27,7 @@ app.get("/", async (req, res) => {
 
 app.use("/expenses", expensesRoutes);
 
+app.use("/incomings", incomingRoutes);
 app.use("/countries", countryRoutes);
 
 app.listen(port, () => {
