@@ -5,6 +5,7 @@ interface IExpense extends Document {
     value: number;
     date: string;
     status: string;
+    icon: string;
 }
 
 const ExpenseSchema = new Schema({
@@ -12,6 +13,7 @@ const ExpenseSchema = new Schema({
     value:{type: Number},
     date:{type: String},
     status:{type: String},
+    icon:{type: String},
 });
 
 const ExpenseModel = model<IExpense>("Expense", ExpenseSchema);
