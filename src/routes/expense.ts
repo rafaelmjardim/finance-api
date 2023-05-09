@@ -40,7 +40,7 @@ routes.put("/:id", async (req, res) => {
         const id = req.params.id;
         const updateExpense = await ExpenseModel.findByIdAndUpdate(id, {$set: req.body});
 
-        return res.json(updateExpense)
+        return res.json({message: 'Editado com sucesso.'})
     } catch (error) {
         return res.status(500).json({erro: 'Erro ao editar despesa.'})
     }
